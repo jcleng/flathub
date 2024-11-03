@@ -1,5 +1,5 @@
 {
-    "app-id": "com.apifox.apifox",
+    "app-id": "com.weixin.qq.wechatwebdevtools",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "24.08",
     "sdk": "org.freedesktop.Sdk",
@@ -80,52 +80,42 @@
             ]
         },
         {
-            "name": "apifox",
+            "name": "wechatwebdevtools",
             "builddir": true,
             "buildsystem": "simple",
             "build-commands": [
-                "install -Dm644 com.apifox.apifox.metainfo.xml -t $FLATPAK_DEST/share/metainfo",
-                "install -Dm644 com.apifox.apifox.desktop /app/share/applications/com.apifox.apifox.desktop",
-                "install -Dm644 com.apifox.apifox.svg /app/share/icons/hicolor/scalable/apps/com.apifox.apifox.svg",
+                "install -Dm644 com.weixin.qq.wechatwebdevtools.metainfo.xml -t $FLATPAK_DEST/share/metainfo",
+                "install -Dm644 com.weixin.qq.wechatwebdevtools.desktop /app/share/applications/com.weixin.qq.wechatwebdevtools.desktop",
+                "install -Dm644 com.weixin.qq.wechatwebdevtools.svg /app/share/icons/hicolor/scalable/apps/com.weixin.qq.wechatwebdevtools.svg",
                 "install -Dm755 run.sh /app/bin/run.sh",
-                "install -Dm755 apply_extra ${FLATPAK_DEST}/bin/apply_extra"
-
+                "mkdir -p /app/dir",
+                "tar xf devtools.tar.gz -C /app/dir",
+                "rm -rf devtools.tar.gz",
+                "ln -s $(find /app/dir -name wechat-devtools) /app/bin/wechat-devtools"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "path": "com.apifox.apifox.desktop"
+                    "path": "com.weixin.qq.wechatwebdevtools.desktop"
                 },
                 {
                     "type": "file",
-                    "path": "com.apifox.apifox.metainfo.xml"
+                    "path": "com.weixin.qq.wechatwebdevtools.metainfo.xml"
                 },
                 {
                     "type": "file",
-                    "path": "com.apifox.apifox.svg"
+                    "path": "com.weixin.qq.wechatwebdevtools.svg"
                 },
                 {
                     "type": "file",
                     "path": "run.sh"
                 },
                 {
-                    "type": "extra-data",
-                    "filename": "apifox_linux.tar.xz",
-                    "only-arches": [
-                        "x86_64"
-                    ],
-                    "url": "https://file-assets.apifox.com/download/Apifox-linux-manual-latest.tar.gz",
-                    "sha256": "792595282eab3fb2c2902d12b0495cc16cc3c65c763983eead49c0b6645beec4",
-                    "size": 272837328
-                },
-                {
-                    "type": "script",
-                    "commands": [
-                        "tar xf apifox_linux.tar.xz",
-                        "rm -rf apifox_linux.tar.xz",
-                        "mv ./*/* ."
-                    ],
-                    "dest-filename": "apply_extra"
+                    "type": "file",
+                    "only-arches": ["x86_64"],
+                    "dest-filename": "devtools.tar.gz",
+                    "url": "https://github.com/msojocs/wechat-web-devtools-linux/releases/download/v1.06.2409140-1/WeChat_Dev_Tools_v1.06.2409140-1_x86_64_linux.tar.gz",
+                    "sha256": "2487d8aa16bf3a6944f4fc419fff2b9212a085ff29fd989291ffed42a2385c60"
                 }
             ]
         }

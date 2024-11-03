@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id type="desktop">com.weixin.qq.wechatwebdevtools</id>
+  <name>Wechat Web Devtools</name>
+  <summary>Wechat Web Devtools</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://developers.weixin.qq.com</project_license>
+  <content_rating type="oars-1.1" />
+  <developer_name>weixin developers</developer_name>
+  <description>
+    <p>
+      <em>NOTE:</em> This wrapper is not verified by, affiliated with, or supported by developers.weixin.qq.com. </p>
+    <p xml:lang="zh-Hans">
+      <em>提示:</em> 本构建未经 developers.weixin.qq.com 验证, 或得到 developers.weixin.qq.com 的支持。这个一个个人构建版本。 </p>
+    <p>
+      tips: Due to flatpak sandbox limitations, please do not check for upgrades within the
+      application.
+    </p>
+    <p xml:lang="zh-Hans">
+      注意: 由于flatpak 沙盒限制, 请不要在应用内检查升级. 此软件本地化仅支持中文功能.
+    </p>
+    <p>
+      In order to help developers develop and debug WeChat applets simply and efficiently, we launched a new WeChat developer tool based on the original official account page debugging tool, integrating two development modes of official account page debugging and applet debugging.
+    </p>
+    <p xml:lang="zh-Hans">为了帮助开发者简单和高效地开发和调试微信小程序，我们在原有的公众号网页调试工具的基础上，推出了全新的 微信开发者工具，集成了公众号网页调试和小程序调试两种开发模式.</p>
+  </description>
+  <url type="homepage">https://developers.weixin.qq.com/</url>
+  <url type="bugtracker">https://github.com/jcleng/flathub/issues</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>
+        https://github.com/jcleng/flathub/blob/com.weixin.qq.wechatwebdevtools/screenshots/Screenshot_20241103_232757.png?raw=true</image>
+      <caption>homepage</caption>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">com.weixin.qq.wechatwebdevtools.desktop</launchable>
+  <releases>
+    <release version="1.06.2409140" date="2024-11-03">
+      <description>
+        <p>first release for flatpak.</p>
+      </description>
+    </release>
+  </releases>
+</component>

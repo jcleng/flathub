@@ -1,0 +1,10 @@
+[Desktop Entry]
+Exec=run.sh
+Icon=com.weixin.qq.wechatwebdevtools
+Name=Wechat Web Devtools
+Name[zh_CN]=微信开发者工具
+Terminal=false
+Type=Application
+Categories=Development;Network
+Comment[zh_CN]=集成了公众号网页调试和小程序调试两种开发模式
+Comment=Integrated two development modes of official account webpage debugging and applet debugging
