@@ -6,3 +6,5 @@ build-dir/
 *.deb
 *.deb
 *.tar.xz
+linux-unpacked/
+apipost_linuxgz_x64_7.2.6.tar.gz

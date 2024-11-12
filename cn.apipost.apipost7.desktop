@@ -1,7 +1,7 @@
 [Desktop Entry]
 Exec=run.sh
-Icon=cn.apipost.apipost
-Name=Apipost
+Icon=cn.apipost.apipost7
+Name=Apipost7
 Terminal=false
 Type=Application
 Categories=Development;Network
