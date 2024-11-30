@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=Navicat Premium Lite 17
+Name=Navicat Premium 16
 GenericName=Database Development Tool
-Icon=com.navicat.navicat17.premium.lite
+Icon=com.navicat.navicat16.premium
 Exec=run.sh
 Categories=Development;
 Keywords=database;sql;

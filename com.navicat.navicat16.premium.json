@@ -1,5 +1,5 @@
 {
-    "app-id": "com.navicat.navicat17.premium.lite",
+    "app-id": "com.navicat.navicat16.premium",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
@@ -14,16 +14,16 @@
     ],
     "modules": [
         {
-            "name": "com.navicat.navicat17.premium.lite",
+            "name": "com.navicat.navicat16.premium",
             "builddir": true,
             "buildsystem": "simple",
             "build-commands": [
-                "install -Dm644 com.navicat.navicat17.premium.lite.desktop /app/share/applications/com.navicat.navicat17.premium.lite.desktop",
-                "install -Dm644 com.navicat.navicat17.premium.lite.svg /app/share/icons/hicolor/scalable/apps/com.navicat.navicat17.premium.lite.svg",
+                "install -Dm644 com.navicat.navicat16.premium.desktop /app/share/applications/com.navicat.navicat16.premium.desktop",
+                "install -Dm644 com.navicat.navicat16.premium.svg /app/share/icons/hicolor/scalable/apps/com.navicat.navicat16.premium.svg",
                 "mkdir -p /app/dir",
                 "mkdir -p /app/bin",
-                "chmod +x navicat17-premium-lite-cs-x86_64.AppImage",
-                "./navicat17-premium-lite-cs-x86_64.AppImage --appimage-extract",
+                "chmod +x navicat16-premium-cs-linux.appimage",
+                "./navicat16-premium-cs-linux.appimage --appimage-extract",
                 "cp -ar squashfs-root/* /app/dir/",
                 "ln -s $(find /app/dir/ -name AppRun) /app/bin/navicat",
                 "install -Dm755 run.sh /app/bin/run.sh",
@@ -32,11 +32,11 @@
             "sources": [
                 {
                     "type": "file",
-                    "path": "com.navicat.navicat17.premium.lite.desktop"
+                    "path": "com.navicat.navicat16.premium.desktop"
                 },
                 {
                     "type": "file",
-                    "path": "com.navicat.navicat17.premium.lite.svg"
+                    "path": "com.navicat.navicat16.premium.svg"
                 },
                 {
                     "type": "file",
@@ -44,7 +44,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "navicat17-premium-lite-cs-x86_64.AppImage"
+                    "path": "navicat16-premium-cs-linux.appimage"
                 }
             ]
         }
