@@ -1,0 +1,52 @@
+{
+    "app-id": "com.navicat.navicat17.premium.lite",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "23.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "run.sh",
+    "finish-args": [
+        "--share=network",
+        "--share=ipc",
+        "--device=dri",
+        "--socket=wayland",
+        "--socket=fallback-x11",
+        "--filesystem=home"
+    ],
+    "modules": [
+        {
+            "name": "com.navicat.navicat17.premium.lite",
+            "builddir": true,
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm644 com.navicat.navicat17.premium.lite.desktop /app/share/applications/com.navicat.navicat17.premium.lite.desktop",
+                "install -Dm644 com.navicat.navicat17.premium.lite.svg /app/share/icons/hicolor/scalable/apps/com.navicat.navicat17.premium.lite.svg",
+                "mkdir -p /app/dir",
+                "mkdir -p /app/bin",
+                "chmod +x navicat17-premium-lite-cs-x86_64.AppImage",
+                "./navicat17-premium-lite-cs-x86_64.AppImage --appimage-extract",
+                "cp -ar squashfs-root/* /app/dir/",
+                "ln -s $(find /app/dir/ -name AppRun) /app/bin/navicat",
+                "install -Dm755 run.sh /app/bin/run.sh",
+                "rm -rf ./squashfs-root"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "com.navicat.navicat17.premium.lite.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "com.navicat.navicat17.premium.lite.svg"
+                },
+                {
+                    "type": "file",
+                    "path": "run.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "navicat17-premium-lite-cs-x86_64.AppImage"
+                }
+            ]
+        }
+    ]
+}
