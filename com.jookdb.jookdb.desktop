@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=Navicat Premium 16
+Name=jookDB
 GenericName=Database Development Tool
-Icon=com.navicat.navicat16.premium
-Exec=run.sh
+Icon=com.jookdb.jookdb
+Exec=jookdb %F
 Categories=Development;
 Keywords=database;sql;
 Terminal=false

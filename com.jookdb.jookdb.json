@@ -1,0 +1,66 @@
+{
+    "app-id": "com.jookdb.jookdb",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "23.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "jookdb",
+    "finish-args": [
+        "--share=network",
+        "--share=ipc",
+        "--device=dri",
+        "--socket=wayland",
+        "--socket=fallback-x11",
+        "--filesystem=home"
+    ],
+    "modules": [
+        {
+            "name": "krb5",
+            "buildsystem": "autotools",
+            "subdir": "src",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://kerberos.org/dist/krb5/1.21/krb5-1.21.3.tar.gz",
+                    "sha256": "b7a4cd5ead67fb08b980b21abd150ff7217e85ea320c9ed0c6dadd304840ad35",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 13287,
+                        "stable-only": true,
+                        "url-template": "https://kerberos.org/dist/krb5/${version0}.${version1}/krb5-${version0}.${version1}.${version2}.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "com.jookdb.jookdb",
+            "builddir": true,
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm644 com.jookdb.jookdb.desktop /app/share/applications/com.jookdb.jookdb.desktop",
+                "install -Dm644 com.jookdb.jookdb.svg /app/share/icons/hicolor/scalable/apps/com.jookdb.jookdb.svg",
+                "mkdir -p /app/dir",
+                "mkdir -p /app/bin",
+                "chmod +x jookdb_6.12_linux_x64.AppImage",
+                "./jookdb_6.12_linux_x64.AppImage --appimage-extract",
+                "cp -ar squashfs-root/* /app/dir/",
+                "ln -s $(find /app/dir/ -name AppRun) /app/bin/jookdb",
+                "chmod +x /app/bin/jookdb",
+                "rm -rf ./squashfs-root"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "com.jookdb.jookdb.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "com.jookdb.jookdb.svg"
+                },
+                {
+                    "type": "file",
+                    "path": "jookdb_6.12_linux_x64.AppImage"
+                }
+            ]
+        }
+    ]
+}
