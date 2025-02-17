@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=jookDB
-GenericName=Database Development Tool
-Icon=com.jookdb.jookdb
-Exec=jookdb %F
-Categories=Development;
-Keywords=database;sql;
-Terminal=false

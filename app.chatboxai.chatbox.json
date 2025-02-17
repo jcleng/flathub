@@ -1,9 +1,9 @@
 {
-    "app-id": "com.jookdb.jookdb",
+    "app-id": "app.chatboxai.chatbox",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
-    "command": "jookdb",
+    "command": "run.sh",
     "finish-args": [
         "--share=network",
         "--share=ipc",
@@ -32,33 +32,36 @@
             ]
         },
         {
-            "name": "com.jookdb.jookdb",
+            "name": "app.chatboxai.chatbox",
             "builddir": true,
             "buildsystem": "simple",
             "build-commands": [
-                "install -Dm644 com.jookdb.jookdb.desktop /app/share/applications/com.jookdb.jookdb.desktop",
-                "install -Dm644 com.jookdb.jookdb.svg /app/share/icons/hicolor/scalable/apps/com.jookdb.jookdb.svg",
+                "install -Dm644 app.chatboxai.chatbox.desktop /app/share/applications/app.chatboxai.chatbox.desktop",
+                "install -Dm644 app.chatboxai.chatbox.svg /app/share/icons/hicolor/scalable/apps/app.chatboxai.chatbox.svg",
                 "mkdir -p /app/dir",
                 "mkdir -p /app/bin",
-                "chmod +x jookdb_7.1_linux_x64.AppImage",
-                "./jookdb_7.1_linux_x64.AppImage --appimage-extract",
+                "install -Dm755 run.sh /app/bin/run.sh",
+                "chmod +x Chatbox-1.9.8-x86_64.AppImage",
+                "./Chatbox-1.9.8-x86_64.AppImage --appimage-extract",
                 "cp -ar squashfs-root/* /app/dir/",
-                "ln -s $(find /app/dir/ -name AppRun) /app/bin/jookdb",
-                "chmod +x /app/bin/jookdb",
                 "rm -rf ./squashfs-root"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "path": "com.jookdb.jookdb.desktop"
+                    "path": "app.chatboxai.chatbox.desktop"
                 },
                 {
                     "type": "file",
-                    "path": "com.jookdb.jookdb.svg"
+                    "path": "app.chatboxai.chatbox.svg"
                 },
                 {
                     "type": "file",
-                    "path": "jookdb_7.1_linux_x64.AppImage"
+                    "path": "Chatbox-1.9.8-x86_64.AppImage"
+                },
+                {
+                    "type": "file",
+                    "path": "run.sh"
                 }
             ]
         }
