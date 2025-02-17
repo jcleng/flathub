@@ -40,8 +40,8 @@
                 "install -Dm644 com.jookdb.jookdb.svg /app/share/icons/hicolor/scalable/apps/com.jookdb.jookdb.svg",
                 "mkdir -p /app/dir",
                 "mkdir -p /app/bin",
-                "chmod +x jookdb_6.12_linux_x64.AppImage",
-                "./jookdb_6.12_linux_x64.AppImage --appimage-extract",
+                "chmod +x jookdb_7.1_linux_x64.AppImage",
+                "./jookdb_7.1_linux_x64.AppImage --appimage-extract",
                 "cp -ar squashfs-root/* /app/dir/",
                 "ln -s $(find /app/dir/ -name AppRun) /app/bin/jookdb",
                 "chmod +x /app/bin/jookdb",
@@ -58,7 +58,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "jookdb_6.12_linux_x64.AppImage"
+                    "path": "jookdb_7.1_linux_x64.AppImage"
                 }
             ]
         }
