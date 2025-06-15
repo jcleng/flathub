@@ -1,0 +1,113 @@
+{
+    "app-id": "com.todesk.todesk",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "23.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "run.sh",
+    "finish-args": [
+        "--share=network",
+        "--share=ipc",
+        "--device=dri",
+        "--socket=x11",
+        "--socket=pulseaudio",
+        "--filesystem=xdg-download",
+        "--own-name=com.todesk.toc.ui",
+        "--socket=session-bus"
+    ],
+    "modules": [
+        {
+            "name": "noto-fonts",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p /app/share/fonts",
+                "install -D NotoSans-Bold.ttf /app/share/fonts/",
+                "install -D NotoSans-Medium.ttf /app/share/fonts/",
+                "install -D NotoSans-Regular.ttf /app/share/fonts/",
+                "install -D NotoSans-ExtraCondensed.ttf /app/share/fonts/",
+                "install -D NotoSans-ExtraCondensedBold.ttf /app/share/fonts/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-hinted.zip",
+                    "sha256": "02e5f834c526f815f3b9f90f98e2b5b09f17cec107cc751c3b58fc3a2c0b2942"
+                }
+            ]
+        },
+        {
+            "name": "noto-font-cjk-regular",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p /app/share/fonts",
+                "install -D NotoSansCJK-Regular.ttc /app/share/fonts/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJK-Regular.ttc.zip",
+                    "sha256": "32d03afb0b1109fa75a96f89dfc118015283a5343f2216ee4b3757c19992f75d"
+                }
+            ]
+        },
+        {
+            "name": "noto-font-cjk-bold",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p /app/share/fonts",
+                "install -D NotoSansCJK-Bold.ttc /app/share/fonts/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJK-Bold.ttc.zip",
+                    "sha256": "3cd895bce6765903b2eefcd90eea6ed372364e66d5b896ea3a594bd3e737eba0"
+                }
+            ]
+        },
+        {
+            "name": "noto-font-cjk-medium",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p /app/share/fonts",
+                "install -D NotoSansCJK-Medium.ttc /app/share/fonts/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJK-Medium.ttc.zip",
+                    "sha256": "d7590637168e1cff4fd3a15422e483308d7ba2a7120ccaf96ead274c3b40e1b3"
+                }
+            ]
+        },
+        {
+            "name": "com.todesk.todesk",
+            "builddir": true,
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm644 com.todesk.todesk.desktop /app/share/applications/com.todesk.todesk.desktop",
+                "install -Dm644 com.todesk.todesk.svg /app/share/icons/hicolor/scalable/apps/com.todesk.todesk.svg",
+                "mkdir -p /app/bin",
+                "install -Dm755 run.sh /app/bin/run.sh",
+                "cp -ar ./todesk /app/"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "com.todesk.todesk.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "com.todesk.todesk.svg"
+                },
+                {
+                    "type": "archive",
+                    "path": "todesk_4.1.0_x86_64.pkg.tar.zst"
+                },
+                {
+                    "type": "file",
+                    "path": "run.sh"
+                }
+            ]
+        }
+    ]
+}

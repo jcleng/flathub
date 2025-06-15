@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=ToDesk
+Comment=ToDesk Remote Control Software
+GenericName=ToDesk Remote Control Software
+GenericName[zh_CN]=ToDesk远程控制软件
+Exec=run.sh
+Terminal=false
+Type=Application
+Icon=com.todesk.todesk
+Categories=Utility;
