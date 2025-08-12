@@ -7,3 +7,6 @@ build-dir/
 *.deb
 *.tar.xz
 apipost_x64_8.1.4/
+*.AppImage
+*.appimage
+*.zst
