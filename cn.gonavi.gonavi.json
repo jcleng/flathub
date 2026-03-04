@@ -1,0 +1,53 @@
+{
+    "app-id": "cn.gonavi.gonavi",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "24.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "gonavi",
+    "finish-args": [
+        "--share=ipc",
+        "--share=network",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--filesystem=home",
+        "--filesystem=xdg-documents",
+        "--talk-name=org.freedesktop.Notifications",
+        "--talk-name=org.freedesktop.portal.*"
+    ],
+    "modules": [
+        "webkitgtk.json",
+        {
+            "name": "gonavi",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm644 cn.gonavi.gonavi.desktop /app/share/applications/cn.gonavi.gonavi.desktop",
+                "install -Dm644 cn.gonavi.gonavi.svg /app/share/icons/hicolor/scalable/apps/cn.gonavi.gonavi.svg",
+                "install -Dm755 gonavi-build-linux-amd64 /app/bin/gonavi",
+                "install -Dm755 launch.sh /app/bin/launch.sh"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "only-arches": [
+                        "x86_64"
+                    ],
+                    "url": "https://github.com/Syngnat/GoNavi/releases/download/v0.5.1/GoNavi-0.5.1-Linux-Amd64.tar.gz",
+                    "sha256": "2e1fa0d2cfb558cc697e1f776f909eb5ba6fccc793ea98d4f6b8c78630598215"
+                },
+                {
+                    "type": "file",
+                    "path": "launch.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "cn.gonavi.gonavi.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "cn.gonavi.gonavi.svg"
+                }
+            ]
+        }
+    ]
+}

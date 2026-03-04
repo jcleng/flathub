@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=launch.sh
+Icon=cn.gonavi.gonavi
+Name=GoNavi
+Terminal=false
+Type=Application
+Categories=Development;Network
+Comment[zh_CN]=GoNavi
+Comment=GoNavi
