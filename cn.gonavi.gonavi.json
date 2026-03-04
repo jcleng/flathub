@@ -21,6 +21,8 @@
             "name": "gonavi",
             "buildsystem": "simple",
             "build-commands": [
+                "ls -lash",
+                "die",
                 "install -Dm644 cn.gonavi.gonavi.desktop /app/share/applications/cn.gonavi.gonavi.desktop",
                 "install -Dm644 cn.gonavi.gonavi.svg /app/share/icons/hicolor/scalable/apps/cn.gonavi.gonavi.svg",
                 "install -Dm755 gonavi-build-linux-amd64 /app/bin/gonavi",
