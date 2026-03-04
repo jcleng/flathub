@@ -17,15 +17,13 @@
     ],
     "modules": [
         {
-            "name": "gonavi",
+            "name": "gonavi-bin",
             "buildsystem": "simple",
             "build-commands": [
                 "ls -lash",
-                "die",
-                "install -Dm644 cn.gonavi.gonavi.desktop /app/share/applications/cn.gonavi.gonavi.desktop",
-                "install -Dm644 cn.gonavi.gonavi.svg /app/share/icons/hicolor/scalable/apps/cn.gonavi.gonavi.svg",
                 "install -Dm755 gonavi-build-linux-amd64 /app/bin/gonavi",
-                "install -Dm755 launch.sh /app/bin/launch.sh"
+                "ls -lash",
+                "die"
             ],
             "sources": [
                 {
@@ -35,7 +33,19 @@
                     ],
                     "url": "https://github.com/Syngnat/GoNavi/releases/download/v0.5.1/GoNavi-0.5.1-Linux-Amd64.tar.gz",
                     "sha256": "2e1fa0d2cfb558cc697e1f776f909eb5ba6fccc793ea98d4f6b8c78630598215"
-                },
+                }
+            ]
+        },
+        {
+            "name": "install",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm644 cn.gonavi.gonavi.desktop /app/share/applications/cn.gonavi.gonavi.desktop",
+                "install -Dm644 cn.gonavi.gonavi.svg /app/share/icons/hicolor/scalable/apps/cn.gonavi.gonavi.svg",
+                "install -Dm755 gonavi-build-linux-amd64 /app/bin/gonavi",
+                "install -Dm755 launch.sh /app/bin/launch.sh"
+            ],
+            "sources": [
                 {
                     "type": "file",
                     "path": "launch.sh"
