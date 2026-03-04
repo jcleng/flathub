@@ -19,11 +19,10 @@
         {
             "name": "gonavi-bin",
             "buildsystem": "simple",
+            "builddir": true,
             "build-commands": [
                 "ls -lash",
-                "install -Dm755 gonavi-build-linux-amd64 /app/bin/gonavi",
-                "ls -lash",
-                "die"
+                "install -Dm755 gonavi-build-linux-amd64 /app/bin/gonavi"
             ],
             "sources": [
                 {
@@ -42,7 +41,6 @@
             "build-commands": [
                 "install -Dm644 cn.gonavi.gonavi.desktop /app/share/applications/cn.gonavi.gonavi.desktop",
                 "install -Dm644 cn.gonavi.gonavi.svg /app/share/icons/hicolor/scalable/apps/cn.gonavi.gonavi.svg",
-                "install -Dm755 gonavi-build-linux-amd64 /app/bin/gonavi",
                 "install -Dm755 launch.sh /app/bin/launch.sh"
             ],
             "sources": [
