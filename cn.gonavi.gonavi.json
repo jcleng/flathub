@@ -16,7 +16,6 @@
         "--talk-name=org.freedesktop.portal.*"
     ],
     "modules": [
-        // "webkitgtk.json",
         {
             "name": "gonavi",
             "buildsystem": "simple",
