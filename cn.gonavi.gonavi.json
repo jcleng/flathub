@@ -21,7 +21,7 @@
             "buildsystem": "simple",
             "builddir": false,
             "build-commands": [
-                "tar --no-same-owner xvf GoNavi-0.5.1-Linux-Amd64.tar.gz",
+                "tar xvf GoNavi-0.5.1-Linux-Amd64.tar.gz --no-same-owner",
                 "install -Dm755 gonavi-build-linux-amd64 /app/bin/gonavi",
                 "rm -rf GoNavi-0.5.1-Linux-Amd64.tar.gz",
                 "rm -rf gonavi-build-linux-amd64"
