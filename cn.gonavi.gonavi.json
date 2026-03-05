@@ -1,8 +1,8 @@
 {
     "app-id": "cn.gonavi.gonavi",
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "24.08",
-    "sdk": "org.freedesktop.Sdk",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "49",
+    "sdk": "org.gnome.Sdk",
     "command": "gonavi",
     "finish-args": [
         "--share=ipc",
