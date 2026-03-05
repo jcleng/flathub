@@ -16,13 +16,12 @@
         "--talk-name=org.freedesktop.portal.*"
     ],
     "modules": [
-        "webkitgtk.json",
         {
             "name": "gonavi-bin",
             "buildsystem": "simple",
             "builddir": false,
             "build-commands": [
-                "tar xvf GoNavi-0.5.1-Linux-Amd64.tar.gz",
+                "tar --no-same-owner xvf GoNavi-0.5.1-Linux-Amd64.tar.gz",
                 "install -Dm755 gonavi-build-linux-amd64 /app/bin/gonavi",
                 "rm -rf GoNavi-0.5.1-Linux-Amd64.tar.gz",
                 "rm -rf gonavi-build-linux-amd64"
